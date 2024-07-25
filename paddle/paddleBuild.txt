@@ -1,0 +1,12 @@
+Materials:
+- 2x Flexy Bits (plastic from arizona gallon bottle)
+- 2x 1/4" Coductive Pieces (Roofing Nails)
+- Center Ground Rod (Random screw)
+- Wire to connect everything (speaker wire)
+- Insulative building materials (PVC and wood trim)
+
+
+Place the center ground rod and a upright peice of building material on a flat peice of material
+
+Attach the flex bits to the upright and add conductive peices at the other end
+Wire it up and attach to a keyer
