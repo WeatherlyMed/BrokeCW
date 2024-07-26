@@ -1,8 +1,11 @@
-const int LED = 19;
-const int dit = 2;
-const int dah = 3;
+const int LED = 9;
+const int dit = 21;
+const int dah = 24;
 const int key = 4;
-var int DPM = 25*50;
+const int reset = 3;
+const int speed = 20;
+
+int DPM = 25*50;
 float element = 3.0;
 float ditLang, dahLang;
 int ditStat = 0;
@@ -13,18 +16,32 @@ void setup(){
   pinMode(dah, INPUT_PULLUP);
   pinMode(LED, OUTPUT);
   digtialWrite(LED, LOW);
-  dotLang = (1/DPM)*60*1000;
+  ditLang = (1/DPM)*60*1000;
   dahLang = dotLang*element;
 }
 //need Functions
 void keyUp(){
   digitalWrite(key, LOW);
+  digitalWrite(LED, LOW);
 }
 void keyDown(){
   digitalWrite(key, HIGH);
+  digitalWrite(LED, HIGH);
 }
 void doDit(){
-  
+  keyDown();
+  delay(ditLang);
+  keyUp();
+  delay(ditLang);
+  ditStat = 0;
+}
+
+void doDit(){
+  keyDown();
+  delay(dahLang);
+  keyUp();
+  delay(dahLang);
+  dahStat = 0;
 }
 
 void loop(){
@@ -33,8 +50,14 @@ void loop(){
   if (ditStat >= 100){
     doDit();
   }
-  if (dahStat >= 100){
+  else if (dahStat >= 100){
     doDah();
+  }
+  else if (digitalRead(reset) == HIGH){
+    int read = analogRead(speed);
+    DPM = DPM + ((read-threshold)*0.01);
+    ditLang = (1/DPM)*60*1000;
+    dahLang = dotLang*element;
   }
 
 }
