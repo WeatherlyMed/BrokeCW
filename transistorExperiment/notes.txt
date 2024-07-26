@@ -1,0 +1,6 @@
+All avalible transistors use higher voltage than avalible from arduino keyer and this means even a mosfet is not feasible.
+However, reversing the code for the keyer so that low is hit on up tones and high on down tones should help with this.
+This also means the ground must be universal so that arduino ground(low) is also the 12v Low signal.
+
+Notes:
+All designs analysised used a single key to signal using a iambic (double) paddle means ajustments will need to me made.
