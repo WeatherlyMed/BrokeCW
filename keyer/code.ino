@@ -23,11 +23,11 @@ void setup(){
 }
 //need Functions
 void keyUp(){
-  digitalWrite(key, LOW);
+  digitalWrite(key, HIGH);
   digitalWrite(LED, LOW);
 }
 void keyDown(){
-  digitalWrite(key, HIGH);
+  digitalWrite(key, LOW);
   digitalWrite(LED, HIGH);
 }
 void doDit(){
