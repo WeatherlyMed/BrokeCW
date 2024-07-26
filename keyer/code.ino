@@ -4,20 +4,22 @@ const int dah = 24;
 const int key = 4;
 const int reset = 3;
 const int speed = 20;
+const int threshold = 512;
 
 int DPM = 25*50;
 float element = 3.0;
 float ditLang, dahLang;
 int ditStat = 0;
 int dahStat = 0;
+i
 
 void setup(){
-  pinMode(dit, ANALOG_IN);
-  pinMode(dah, INPUT_PULLUP);
+  pinMode(dit, INPUT);
+  pinMode(dah, INPUT);
   pinMode(LED, OUTPUT);
-  digtialWrite(LED, LOW);
+  digitalWrite(LED, LOW);
   ditLang = (1/DPM)*60*1000;
-  dahLang = dotLang*element;
+  dahLang = ditLang*element;
 }
 //need Functions
 void keyUp(){
@@ -36,7 +38,7 @@ void doDit(){
   ditStat = 0;
 }
 
-void doDit(){
+void doDah(){
   keyDown();
   delay(dahLang);
   keyUp();
@@ -57,7 +59,7 @@ void loop(){
     int read = analogRead(speed);
     DPM = DPM + ((read-threshold)*0.01);
     ditLang = (1/DPM)*60*1000;
-    dahLang = dotLang*element;
+    dahLang = ditLang*element;
   }
 
 }
