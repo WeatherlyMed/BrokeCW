@@ -1,0 +1,6 @@
+Measure out 33 feet of speaker wire cut and split it into 2 33' peices (this is for 7.1Mhz)
+get a bnc connector - Or if you are me cut open a BNC wire and isloate gnd and pwr
+soldier each end of the bnc to an indivdual wire
+wrap the joints in electrical tape
+use a peice of plasic to prevent stress on the solider 
+drill holes and use zip ties to attach
