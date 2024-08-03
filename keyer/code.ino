@@ -18,7 +18,7 @@ void setup(){
   pinMode(dah, INPUT);
   pinMode(LED, OUTPUT);
   digitalWrite(LED, LOW);
-  ditLang = (1/DPM)*60*1000;
+  ditLang = 2000;
   dahLang = ditLang*element;
 }
 //need Functions
