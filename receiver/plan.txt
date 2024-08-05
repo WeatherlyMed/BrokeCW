@@ -1,12 +1,10 @@
 Most common designs use LM386 applfier chip I am using a lm741 instead
 Based on Tommy Helgevoid's design for a 5 minute recivever and makeRF's LM386 receiver
 use
-100 ohm speaker
+50 ohm headphones
+Coil SRR1260A
 op amp
-antenna
-15 pF
-220 uF
-10 pF
-47 pF
-Varible capcitor
-200k resistor
+antenna or bnc connector
+47 pF EDK475M050A9DAA
+100 uF EDK107M016A9GAA
+200k resistor RC1206FR-13200KL
