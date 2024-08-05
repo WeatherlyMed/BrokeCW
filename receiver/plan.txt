@@ -1,5 +1,5 @@
 Most common designs use LM386 applfier chip I am using a lm741 instead
-Based on Tommy Helgevoid's design for a 5 minute recivever
+Based on Tommy Helgevoid's design for a 5 minute recivever and makeRF's LM386 receiver
 use
 100 ohm speaker
 op amp
