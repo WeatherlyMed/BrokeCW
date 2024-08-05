@@ -1,0 +1,12 @@
+Most common designs use LM386 applfier chip I am using a lm741 instead
+Based on Tommy Helgevoid's design for a 5 minute recivever
+use
+100 ohm speaker
+op amp
+antenna
+15 pF
+220 uF
+10 pF
+47 pF
+Varible capcitor
+200k resistor
