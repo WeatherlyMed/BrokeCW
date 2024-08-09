@@ -1,0 +1,41 @@
+low-pass filter (LPF) allows low-frequency signals to pass through while cuting out higher-frequency signals. 
+
+How Low-Pass Filters Work
+Basic Principle:
+
+Pass Band: Frequencies below a certain cutoff frequency are allowed to pass through the filter.
+Stop Band: Frequencies above the cutoff frequency are attenuated or blocked.
+Components:
+
+Resistor (R): Provides impedance to the circuit.
+Capacitor (C): Blocks low-frequency signals but allows high-frequency signals to pass through.
+Inductor (L): Blocks high-frequency signals while allowing low-frequency signals to pass.
+Cutoff Frequency:
+
+The cutoff frequency (f_c) is the point where the filter starts to attenuate the signal. It is defined by the following equations:
+For RC filters: f_c = 1 / (2 * π * R * C)
+For RL filters: f_c = R / (2 * π * L)
+Types of Low-Pass Filters
+RC Low-Pass Filter:
+
+Components: Resistor and Capacitor.
+Function: Attenuates high frequencies based on the RC time constant.
+Equation: Cutoff frequency f_c = 1 / (2 * π * R * C)
+Applications: Used in audio systems, signal conditioning.
+RL Low-Pass Filter:
+
+Components: Resistor and Inductor.
+Function: Attenuates high frequencies based on the RL time constant.
+Equation: Cutoff frequency f_c = R / (2 * π * L)
+Applications: Used in power supplies and audio systems.
+LC Low-Pass Filter:
+
+Components: Inductor and Capacitor.
+Function: Offers steeper attenuation than RC or RL filters due to its resonant properties.
+Equation: Cutoff frequency f_c = 1 / (2 * π * sqrt(L * C))
+Applications: Used in radio frequency circuits and signal processing.
+Active Low-Pass Filter:
+
+Components: Includes operational amplifiers along with resistors and capacitors.
+Function: Provides gain and can be designed with various filter orders.
+Applications: Used in more complex signal processing applications requiring high performance.
