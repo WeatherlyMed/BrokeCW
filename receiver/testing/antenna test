@@ -1,3 +1,8 @@
+
+8 inch scrap antenna quickly fails
+All tests done with 2m dipole collapible ant
+Will test with 20m arial dipole when weather improves
+
 10 nF with 33uH = 6hz
 45 nFwith 33uH = 11.5kHz
 45 nF with one turn of jumper wire insulated = 11.3 kHz
@@ -12,3 +17,11 @@ screw driver turns bare wire
 22 nF 9 turns 10 khz
 22 nF 4 turns 10.4khz
 22 nF 2 turns 10.8khz
+
+at 1khz audbible with double and single high pass
+at 2khz aubible with double and single high pass
+at 7khz a single high pass is barrely aubible
+at 7khz a double high pass produces silence
+a single pass at 14kHz is barrely audible
+added a potentometer
+Theashold around 45khz with single pass
