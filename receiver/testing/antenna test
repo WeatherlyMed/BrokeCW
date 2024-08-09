@@ -25,3 +25,6 @@ at 7khz a double high pass produces silence
 a single pass at 14kHz is barrely audible
 added a potentometer
 Theashold around 45khz with single pass
+
+
+Created double pass varible resistor increased magnification and added an external antenna connector
