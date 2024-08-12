@@ -3,55 +3,67 @@ Resistors
 2x R1: 47kΩ
 CRGP2512F47K
 R2: 33kΩ
+AS0707J0333T5E
 R3: 1kΩ
+RTT121001FTP
 R4: 470Ω
+RTT25471JTE
 R5: 10kΩ
+RS-1210K1002FT
 1x R6: 100kΩ 
 PR02000201003JA100
 R7: 10Ω
+RMS10FT10R0
 R8: 10kΩ
+FCR1210KT10K0
+
 Capacitors
-
 C1: 0.1µF, 16V, Ceramic
-C2: 10nF, Ceramic
-C3: 100pF, Ceramic
-C4: 16pF, Ceramic
-C5: 470pF, Ceramic
-C6: 470pF, Ceramic
-C7: 100pF, Ceramic
-C8: 10µF, 16V, Electrolytic
-C9: 7nF, Ceramic
-C10: 0.1µF, Ceramic
-C11: 10µF, 16V, Electrolytic
+CC0603KRX7R9BB104
+C2: 100pF, Ceramic
+C0603NP0101JGTS
+C3: 16pF, Ceramic
+C1005NP0160KGTS
+C4: 10µF
+CC1210ZKY5V9BB106
+
 Inductors
-
 1x L1: 100µH
+CY105-100uH
 3x L2: 100nH
+SPH201610UR10MT
+
 Diodes
-
-D1: 2W10 (Bridge Rectifier)
 D2: 1N4001
+C727079
 D3: 1N4148
-Transistors
+C402212
 
+Transistors
 1x Q1: 9013 (NPN Transistor) 
 9013-H
 Q2: 8050 (NPN Transistor)
 8050-D
 Crystals
 
-Y1: 7.023MHz Crystal Oscillator
+Y1: 7.023MHz Crystal Oscillator(connector for it)
+A2541HWV-6P
 Integrated Circuits
 
 1x U1: LM386 (Low Voltage Audio Power Amplifier)
 
 Connectors
 
-J1: Power Input Connector
-J2: Coax Connector (for ANT)
-J3: 3.5mm Jack
-J4: 3.5mm Headphone Jack
-J5: LED Indicator
+1x J1: Power Input Connector
+DC-005QB-2.0-SU-R
+and
+9V 100mm
+1x J2: Coax Connector (for ANT)
+DOSIN-801-0038
+2x J3: 3.5mm Jack
+PJ-368-R
+2x J4: LED Indicator pink
+FC-1608WPD-462M
 Miscellaneous
 
 1x W1: 47kΩ Variable Resistor (Potentiometer)
