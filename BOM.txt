@@ -35,7 +35,7 @@ SPH201610UR10MT
 
 Diodes
 D2: 1N4001
-C727079
+C145491
 D3: 1N4148
 C402212
 
@@ -47,7 +47,7 @@ Q2: 8050 (NPN Transistor)
 Crystals
 
 Y1: 7.023MHz Crystal Oscillator(connector for it)
-A2541HWV-6P
+C22373846
 Integrated Circuits
 
 1x U1: LM386 (Low Voltage Audio Power Amplifier)
@@ -61,7 +61,7 @@ and
 1x J2: Coax Connector (for ANT)
 DOSIN-801-0038
 2x J3: 3.5mm Jack
-PJ-368-R
+C431535
 2x J4: LED Indicator pink
 FC-1608WPD-462M
 Miscellaneous
@@ -69,6 +69,6 @@ Miscellaneous
 1x W1: 47kΩ Variable Resistor (Potentiometer)
 WXD3-12-2W 47K
 1x W2: ~20uH Varible inductor
-614BN-9220Z=P3
+Needs replacement
 1x W3: 100 Varible resistor
 RV24YN20S-B101
