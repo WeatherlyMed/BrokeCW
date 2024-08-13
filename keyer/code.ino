@@ -2,11 +2,9 @@ const int LED = 9;
 const int dit = A2;
 const int dah = A3;
 const int key = 4;
-const int cqButton = 5;
+const int cqDePin = A0; // Combined pin for CQ and DE
+const int qrlKPin = A4; // Combined pin for QRL and K
 const int setCallSignButton = 6;
-const int qrlButton = 7;
-const int deButton = 8;
-const int kButton = 10;
 const int reset = 3;
 const int speed = A1;
 const int threshold = 512;
@@ -38,11 +36,7 @@ void setup(){
   pinMode(dah, INPUT);
   pinMode(LED, OUTPUT);
   pinMode(key, OUTPUT);
-  pinMode(cqButton, INPUT);
   pinMode(setCallSignButton, INPUT);
-  pinMode(qrlButton, INPUT);
-  pinMode(deButton, INPUT);
-  pinMode(kButton, INPUT);
   Serial.begin(9600); 
   digitalWrite(LED, LOW);
   ditLang = 100;
@@ -190,25 +184,23 @@ void loop(){
     doDah();
     delay(ditLang);
   }
-  
-  if (digitalRead(cqButton) == HIGH){
+
+  int cqDeValue = analogRead(cqDePin); 
+  if (cqDeValue < 500 && cqDeValue > 100) { 
     sendCQ();
-  }
-  
-  if (digitalRead(setCallSignButton) == HIGH && userCallSign.length() > 0){
-    sendCallSign(userCallSign);
-  }
-
-  if (digitalRead(qrlButton) == HIGH){
-    sendQRL();
-  }
-
-  if (digitalRead(deButton) == HIGH){
+  } else if (cqDeValue >= 500) { 
     sendDE();
   }
 
-  if (digitalRead(kButton) == HIGH){
+  int qrlKValue = analogRead(qrlKPin); 
+  if (qrlKValue < 500 && qrlKValue > 100) { 
+    sendQRL();
+  } else if (qrlKValue >= 500) { 
     sendK();
+  }
+
+  if (digitalRead(setCallSignButton) == HIGH && userCallSign.length() > 0){
+    sendCallSign(userCallSign);
   }
 
   if (Serial.available() > 0) {
