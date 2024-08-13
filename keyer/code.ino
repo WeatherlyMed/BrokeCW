@@ -2,6 +2,7 @@ const int LED = 9;
 const int dit = A2;
 const int dah = A3;
 const int key = 4;
+const int cqButton = 5;
 const int reset = 3;
 const int speed = A1;
 const int threshold = 512;
@@ -16,15 +17,22 @@ String morseCode = "";
 unsigned long lastInputTime = 0;
 const unsigned long pauseTime = 1000; 
 
-String morseLetters[] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---","-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "-----", ".----", "..---","...--", "....-", ".....", "-....", "--...", "---..", "----."};
+String morseLetters[] = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---",
+                         "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
+                         "..-", "...-", ".--", "-..-", "-.--", "--..", "-----", ".----", "..---",
+                         "...--", "....-", ".....", "-....", "--...", "---..", "----."};
 
-char letters[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T','U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3','4', '5', '6', '7', '8', '9'};
+char letters[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                  'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                  'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3',
+                  '4', '5', '6', '7', '8', '9'};
 
 void setup(){
   pinMode(dit, INPUT);
   pinMode(dah, INPUT);
   pinMode(LED, OUTPUT);
   pinMode(key, OUTPUT);
+  pinMode(cqButton, INPUT);
   Serial.begin(9600); 
   digitalWrite(LED, LOW);
   ditLang = 100;
@@ -69,6 +77,19 @@ void decodeMorse(){
   morseCode = ""; 
 }
 
+void sendCQ(){
+  String cqSequence = "-.-.--.-.--.-."; // Morse code for CQ
+  for (int i = 0; i < cqSequence.length(); i++) {
+    if (cqSequence[i] == '.') {
+      doDit();
+    } else if (cqSequence[i] == '-') {
+      doDah();
+    }
+    delay(ditLang); // Space between elements
+  }
+  delay(dahLang * 2); // Space between letters
+}
+
 void loop(){
   ditStat = analogRead(dit);
   dahStat = analogRead(dah);
@@ -81,8 +102,11 @@ void loop(){
     delay(ditLang);
   }
   
+  if (digitalRead(cqButton) == HIGH){
+    sendCQ();
+  }
+
   if (millis() - lastInputTime > pauseTime && morseCode != "") {
     decodeMorse();
   }
 }
-
