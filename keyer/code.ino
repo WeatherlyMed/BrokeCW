@@ -19,6 +19,7 @@ int dahStat = 0;
 
 String morseCode = "";  
 String userCallSign = ""; 
+String otherCallSign = ""; 
 unsigned long lastInputTime = 0;
 const unsigned long pauseTime = 1000; 
 
@@ -144,7 +145,7 @@ void sendQRL(){
 }
 
 void sendDE(){
-  String deSequence = "-....";
+  String deSequence = "-...."; 
   for (int i = 0; i < deSequence.length(); i++) {
     if (deSequence[i] == '.') {
       doDit();
@@ -157,7 +158,7 @@ void sendDE(){
 }
 
 void sendK(){
-  String kSequence = "-.-";
+  String kSequence = "-.-"; 
   for (int i = 0; i < kSequence.length(); i++) {
     if (kSequence[i] == '.') {
       doDit();
@@ -167,6 +168,15 @@ void sendK(){
     delay(ditLang); 
   }
   delay(dahLang * 2); 
+}
+
+void typeOtherCallSign() {
+  Serial.println("Enter the call sign of the person you're talking to: ");
+  while (Serial.available() == 0) {} // Wait for input
+  otherCallSign = Serial.readStringUntil('\n'); // Read input
+  otherCallSign.trim(); // Remove any trailing whitespace
+  Serial.print("Other Call Sign: ");
+  Serial.println(otherCallSign);
 }
 
 void loop(){
@@ -199,6 +209,10 @@ void loop(){
 
   if (digitalRead(kButton) == HIGH){
     sendK();
+  }
+
+  if (Serial.available() > 0) {
+    typeOtherCallSign();
   }
   
   if (millis() - lastInputTime > pauseTime && morseCode != "") {
