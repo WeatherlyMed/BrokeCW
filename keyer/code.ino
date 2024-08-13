@@ -3,6 +3,10 @@ const int dit = A2;
 const int dah = A3;
 const int key = 4;
 const int cqButton = 5;
+const int setCallSignButton = 6;
+const int qrlButton = 7;
+const int deButton = 8;
+const int kButton = 10;
 const int reset = 3;
 const int speed = A1;
 const int threshold = 512;
@@ -14,6 +18,7 @@ int ditStat = 0;
 int dahStat = 0;
 
 String morseCode = "";  
+String userCallSign = ""; 
 unsigned long lastInputTime = 0;
 const unsigned long pauseTime = 1000; 
 
@@ -33,6 +38,10 @@ void setup(){
   pinMode(LED, OUTPUT);
   pinMode(key, OUTPUT);
   pinMode(cqButton, INPUT);
+  pinMode(setCallSignButton, INPUT);
+  pinMode(qrlButton, INPUT);
+  pinMode(deButton, INPUT);
+  pinMode(kButton, INPUT);
   Serial.begin(9600); 
   digitalWrite(LED, LOW);
   ditLang = 100;
@@ -78,16 +87,86 @@ void decodeMorse(){
 }
 
 void sendCQ(){
-  String cqSequence = "-.-.--.-.--.-."; // Morse code for CQ
+  String cqSequence = "-.-.--.-.--.-."; 
   for (int i = 0; i < cqSequence.length(); i++) {
     if (cqSequence[i] == '.') {
       doDit();
     } else if (cqSequence[i] == '-') {
       doDah();
     }
-    delay(ditLang); // Space between elements
+    delay(ditLang); 
   }
-  delay(dahLang * 2); // Space between letters
+  delay(dahLang * 2); 
+}
+
+void sendCallSign(String callSign){
+  for (int i = 0; i < callSign.length(); i++) {
+    char c = callSign[i];
+    if (c == ' ') {
+      delay(dahLang * 2); 
+    } else {
+      String morse = getMorseCode(c);
+      for (int j = 0; j < morse.length(); j++) {
+        if (morse[j] == '.') {
+          doDit();
+        } else if (morse[j] == '-') {
+          doDah();
+        }
+        delay(ditLang); 
+      }
+      delay(dahLang); 
+    }
+  }
+  delay(dahLang * 2); 
+}
+
+String getMorseCode(char c){
+  c = toupper(c);
+  for (int i = 0; i < sizeof(letters)/sizeof(letters[0]); i++) {
+    if (c == letters[i]) {
+      return morseLetters[i];
+    }
+  }
+  return ""; 
+}
+
+void sendQRL(){
+  String qrlSequence = "--.-.-...-.."; 
+  for (int i = 0; i < qrlSequence.length(); i++) {
+    if (qrlSequence[i] == '.') {
+      doDit();
+    } else if (qrlSequence[i] == '-') {
+      doDah();
+    }
+    delay(ditLang); 
+  }
+  delay(dahLang * 2); 
+}
+
+void sendDE(){
+  String deSequence = "-....";
+  for (int i = 0; i < deSequence.length(); i++) {
+    if (deSequence[i] == '.') {
+      doDit();
+    } else if (deSequence[i] == '-') {
+      doDah();
+    }
+    delay(ditLang); 
+  }
+  delay(dahLang * 2); 
+}
+
+void sendK(){
+  String kSequence = "-.-";
+  for (int i = 0; i < kSequence.length(); i++) {
+    if (kSequence[i] == '.') {
+      doDit();
+    } else if (kSequence[i] == '-') {
+      doDah();
+    }
+    delay(ditLang); 
+  }
+  delay(dahLang * 2); 
 }
 
 void loop(){
@@ -105,7 +184,23 @@ void loop(){
   if (digitalRead(cqButton) == HIGH){
     sendCQ();
   }
+  
+  if (digitalRead(setCallSignButton) == HIGH && userCallSign.length() > 0){
+    sendCallSign(userCallSign);
+  }
 
+  if (digitalRead(qrlButton) == HIGH){
+    sendQRL();
+  }
+
+  if (digitalRead(deButton) == HIGH){
+    sendDE();
+  }
+
+  if (digitalRead(kButton) == HIGH){
+    sendK();
+  }
+  
   if (millis() - lastInputTime > pauseTime && morseCode != "") {
     decodeMorse();
   }
