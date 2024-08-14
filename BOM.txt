@@ -16,6 +16,8 @@ R7: 10Ω
 RMS10FT10R0
 R8: 10kΩ
 FCR1210KT10K0
+R9: 220Ω
+RM02FTN2200
 
 Capacitors
 C1: 0.1µF, 16V, Ceramic
@@ -64,15 +66,22 @@ and
 9V 100mm
 1x J2: Coax Connector (for ANT)
 DOSIN-801-0038
-2x J3: 3.5mm Jack
+4x J3: 3.5mm Jack
 C431535
-2x J4: LED Indicator pink
+3x J4: LED Indicator pink
 FC-1608WPD-462M
+2x J5: 15Pin Connector
+B-2100S15P-A110
+
 Miscellaneous
 
 1x W1: 50kΩ Variable Resistor (Potentiometer)
 RK16312A0BKH
-1x W3: 100 Varible resistor
+1x W2 10k Variable Resistor
+RK16312101A2
+1x W3: 100 Varible Resistor
 C330439
 W4: pwr Switch
 A22AB
+5x W5: Option Buttons Keyer
+KMS231GPLFS
