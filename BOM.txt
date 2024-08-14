@@ -26,12 +26,16 @@ C3: 16pF, Ceramic
 C1005NP0160KGTS
 C4: 10µF
 CC1210ZKY5V9BB106
+C5: 0.1uF
+1H103ZC4P-3F-ZNR
 
 Inductors
 1x L1: 100µH
 CY105-100uH
-3x L2: 100nH
-SPH201610UR10MT
+1x L2: 1uH
+NRS4018T1R0NDGJ
+1x L3: 22uH
+SMDRH105R-220MT
 
 Diodes
 D2: 1N4001
@@ -66,9 +70,9 @@ C431535
 FC-1608WPD-462M
 Miscellaneous
 
-1x W1: 47kΩ Variable Resistor (Potentiometer)
-WXD3-12-2W 47K
-1x W2: ~20uH Varible inductor
-Needs replacement
+1x W1: 50kΩ Variable Resistor (Potentiometer)
+RK16312A0BKH
 1x W3: 100 Varible resistor
-RV24YN20S-B101
+C330439
+W4: pwr Switch
+A22AB
