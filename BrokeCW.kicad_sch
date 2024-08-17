@@ -4280,6 +4280,12 @@
 		(uuid "060111f1-b90a-4382-be61-d7fe7cf4cc09")
 	)
 	(junction
+		(at 130.81 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0a561467-64ac-46b4-ac46-3cbe96e89148")
+	)
+	(junction
 		(at 182.88 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4326,6 +4332,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2922712b-cc36-4a06-bc8d-0fe027edc87c")
+	)
+	(junction
+		(at 133.35 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e12f1b5-3811-4b57-accb-6bd3b83c14cb")
 	)
 	(junction
 		(at 41.91 152.4)
@@ -4608,6 +4620,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f8bca847-462a-4c35-ae56-a8b57f8e0417")
+	)
+	(junction
+		(at 128.27 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8e00404-42c6-459a-8511-e6ea1b8b76f7")
 	)
 	(junction
 		(at 58.42 170.18)
@@ -5173,6 +5191,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 43.18) (xy 146.05 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "486fd099-66ce-475d-b537-672cce169f7c")
+	)
+	(wire
+		(pts
 			(xy 133.35 30.48) (xy 146.05 30.48)
 		)
 		(stroke
@@ -5523,7 +5551,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 43.18) (xy 146.05 43.18)
+			(xy 128.27 43.18) (xy 130.81 43.18)
 		)
 		(stroke
 			(width 0)
@@ -5843,6 +5871,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 38.1) (xy 128.27 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cafc29c8-63bd-48a7-bb05-f90b1e734491")
+	)
+	(wire
+		(pts
 			(xy 262.89 80.01) (xy 262.89 101.6)
 		)
 		(stroke
@@ -5930,6 +5968,16 @@
 			(type default)
 		)
 		(uuid "da5e2a2d-a1fb-4192-a679-65b32491a252")
+	)
+	(wire
+		(pts
+			(xy 130.81 43.18) (xy 133.35 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db0dddf8-a5d8-4316-b921-f6748b9f9065")
 	)
 	(wire
 		(pts
@@ -7462,77 +7510,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x03_Pin")
-		(at 130.81 43.18 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "54c27e77-919e-45b0-9904-77038f5ff9da")
-		(property "Reference" "J5"
-			(at 138.43 43.815 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x03_Pin"
-			(at 135.89 43.815 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 130.81 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 130.81 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 130.81 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "88873e68-92cd-44e5-bb8f-eba80453b8cd")
-		)
-		(pin "2"
-			(uuid "dc659d51-e784-46dc-975e-ffe8bb576e60")
-		)
-		(pin "1"
-			(uuid "e8059d92-011a-4df3-b8a8-90ce17c1461d")
-		)
-		(instances
-			(project ""
-				(path "/fe75ec84-d622-42ca-b064-a5d970bee022"
-					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Audio:AudioJack3_Ground")
 		(at 276.86 109.22 180)
 		(unit 1)
@@ -8822,6 +8799,77 @@
 			(project "BrokeCW"
 				(path "/fe75ec84-d622-42ca-b064-a5d970bee022"
 					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x03_Pin")
+		(at 130.81 38.1 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d11d35e8-73f9-45c1-ab99-99744bf74809")
+		(property "Reference" "J5"
+			(at 138.43 38.735 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x03_Pin"
+			(at 135.89 38.735 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Hirose:Hirose_DF13-03P-1.25DSA_1x03_P1.25mm_Vertical"
+			(at 130.81 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 130.81 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated"
+			(at 130.81 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7cd30b3d-17b3-4e7c-ae3d-15c61d2b3baf")
+		)
+		(pin "2"
+			(uuid "bc8a05c7-2001-429f-b527-f61aed2b7309")
+		)
+		(pin "3"
+			(uuid "0e334910-feb4-4181-b55d-abf6580713a4")
+		)
+		(instances
+			(project "BrokeCW"
+				(path "/fe75ec84-d622-42ca-b064-a5d970bee022"
+					(reference "J5")
 					(unit 1)
 				)
 			)
